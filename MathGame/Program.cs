@@ -51,16 +51,11 @@ void newGame()
     Q - Exit to Main Menu");
     Console.WriteLine("--------------------------------------------------");
 
-    string? selection = Console.ReadLine();
-
-    while (selection == "")
-    {
-        Console.WriteLine("Enter a Selection");
-        selection = Console.ReadLine();
-    }
+    string? selection;
 
     while (true)
     {
+        selection = Console.ReadLine();
         switch (selection.Trim().ToLower())
         {
             case "a":
@@ -160,6 +155,7 @@ int runAGame(char op)
         } catch (FormatException)
         {
             Console.WriteLine("You must enter a whole number. Try again.");
+            Console.ReadLine();
         }
     }
 
